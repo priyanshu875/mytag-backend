@@ -59,6 +59,8 @@ const msgModels=mongoose.model('msgModels',mongoose.Schema({
     imageUrl:{
         type:String
     }
+},{
+    timestamps:true
 }))
 
 

@@ -28,6 +28,19 @@ async function addItem(req,res){
 }
 
 
+operation
+.route('/deleteItem/:itemId')
+.delete(deleteItem)
+
+async function deleteItem(req,res){
+    const itemId=req.params['itemId'];
+    let data=await itemModels.findOneAndDelete({_id:itemId})
+    res.json({
+        status:"deleted"
+    })
+}
+
+
 //get all items
 operation
 .route('/getallitems')
